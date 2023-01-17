@@ -53,6 +53,14 @@ export class TicketsController {
     if (!success) throw new UnprocessableEntityException();
   }
 
+  @Put(':ticketId/unassign')
+  @HttpCode(204)
+  async unassignTicket(@Param('ticketId') ticketId: string) {
+    await randomDelay();
+    const success = await this.ticketsService.unassign(Number(ticketId));
+    if (!success) throw new UnprocessableEntityException();
+  }
+
   @Put(':id/complete')
   @HttpCode(204)
   async markAsComplete(@Param('id') ticketId: string) {

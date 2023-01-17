@@ -59,6 +59,16 @@ export class TicketsService {
     }
   }
 
+  async unassign(ticketId: number): Promise<boolean> {
+    const ticket = await this.ticket(ticketId);
+    if (ticket) {
+      ticket.assigneeId = null;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   async complete(ticketId: number, completed: boolean): Promise<boolean> {
     const ticket = await this.ticket(ticketId);
     if (ticket) {
