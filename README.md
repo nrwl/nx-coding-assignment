@@ -14,12 +14,12 @@ decisions you have made, etc..
 You have two different options to choose from for your assignment. You only need to complete one of them:
 
 1. A Node CLI
-3. A React client app
+2. A React client app
 
 ## Node CLI
 
 | ℹ️ Please only choose one assignment to work on. Either this Node CLI or the [React](./client) client. |
-| ----------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------------------------------ |
 
 ### Requirements
 
@@ -45,9 +45,9 @@ An example repo to test against is set up here: https://github.com/nrwl/count-co
 ## Ticket Managing Application (React)
 
 | ℹ️ Please only choose one assignment to work on. Either the Node CLI described above or the [React](./client) client. |
-| -------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------------------------------------------------------------------------------------------------------- |
 
-⚠️  Don't fork this repo. Instead, use the [Download ZIP](https://codeload.github.com/nrwl/nx-coding-assignment/zip/refs/heads/main) link.
+⚠️ Don't fork this repo. Instead, use the [Download ZIP](https://codeload.github.com/nrwl/nx-coding-assignment/zip/refs/heads/main) link.
 
 ```bash
 curl https://codeload.github.com/nrwl/nx-coding-assignment/zip/refs/heads/main --output nx-coding-assignment.zip
@@ -76,7 +76,9 @@ Build a ticket managing app, where the user can _add_, _filter_ (by status), _as
   1. the list screen and
   2. the details screen.
 
-- You can use any state management library you want (or none at all). e.g. redux,  xstate, etc.
+- You can use any state management library you want (or none at all). e.g. redux, xstate, etc.
+
+- You can use any styling library or methodology you want (or none at all). e.g. styled-components, tailwind, mui, etc.
 
 - Write a couple of tests. The goal here is not to build a production-quality app, so don't test every single detail. Two or three tests should be good enough.
 
