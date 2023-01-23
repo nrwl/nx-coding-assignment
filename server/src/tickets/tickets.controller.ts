@@ -11,6 +11,7 @@ import {
   Delete,
   Body,
   HttpCode,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { randomDelay } from '../utils/random-delay';
 import { TicketsService } from './tickets.service';
@@ -25,8 +26,8 @@ export class TicketsController {
     return this.ticketsService.tickets();
   }
 
-  @Get()
-  async getTicket(id: number) {
+  @Get(':id')
+  async getTicket(@Param('id', ParseIntPipe) id: number) {
     await randomDelay();
     const ticket = await this.ticketsService.ticket(id);
     if (ticket) return ticket;
