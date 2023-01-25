@@ -104,12 +104,53 @@ Sample Response:
 }
 ```
 
+### Create ticket
+
+Request:
+
+```text
+POST /api/tickets
+```
+
+Request Body:
+
+```json
+{
+  "description": "Install a monitor arm"
+}
+```
+
+Sample Response:
+
+```json
+{
+  "id": 1,
+  "description": "Install a monitor arm",
+  "assigneeId": null,
+  "completed": false
+}
+```
+
 ### Assign user to ticket
 
 Request:
 
 ```text
 PUT /api/tickets/:ticketId/assign/:userId
+```
+
+Response:
+
+```text
+204 No Content
+```
+
+### Unassign user from ticket
+
+Request:
+
+```text
+PUT /api/tickets/:ticketId/unassign
 ```
 
 Response:
