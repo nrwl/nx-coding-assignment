@@ -30,7 +30,7 @@ const App = () => {
     <div className={styles['app']}>
       <h1>Ticketing App</h1>
       <Routes>
-        <Route path="/" element={<Tickets tickets={tickets} />} />
+        <Route path="/" element={<Tickets tickets={tickets} users={users} />} />
         {/* Hint: Try `npx nx g component TicketDetails --project=client --no-export` to generate this component  */}
         <Route path="/:id" element={<h2>Details Not Implemented</h2>} />
       </Routes>

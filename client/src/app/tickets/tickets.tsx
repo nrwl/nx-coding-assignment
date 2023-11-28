@@ -1,8 +1,9 @@
-import { Ticket } from '@acme/shared-models';
+import { Ticket, User } from '@acme/shared-models';
 import styles from './tickets.module.css';
 
 export interface TicketsProps {
   tickets: Ticket[];
+  users: User[];
 }
 
 export function Tickets(props: TicketsProps) {
