@@ -5,20 +5,11 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "swc",
-        "outputPath": "dist/client",
-        "index": "client/src/index.html",
-        "baseHref": "/",
-        "main": "client/src/main.tsx",
-        "tsConfig": "client/tsconfig.app.json",
-        "assets": ["client/src/favicon.ico", "client/src/assets"],
-        "styles": ["client/src/styles.css"],
-        "scripts": [],
-        "webpackConfig": "client/webpack.config.js"
+        "outputPath": "dist/client"
       },
       "configurations": {
         "development": {
@@ -39,12 +30,11 @@
       }
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "client:build",
-        "hmr": true,
-        "proxyConfig": "client/proxy.conf.json"
+        "hmr": true
       },
       "configurations": {
         "development": {
@@ -64,10 +54,23 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/client"],
+      "options": {}
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
       "options": {
-        "jestConfig": "client/jest.config.ts"
+        "buildTarget": "client:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "client:build:development"
+        },
+        "production": {
+          "buildTarget": "client:build:production"
+        }
       }
     }
   },
