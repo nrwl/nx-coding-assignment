@@ -58,13 +58,13 @@ cd nx-coding-assignment-main
 Then install the packages, and you're good to go!
 
 ```bash
-yarn
+pnpm install
 
 # run client and server apps
-yarn start
+pnpm start
 
 # run tests
-yarn test
+pnpm test
 ```
 
 ### Requirements
@@ -84,7 +84,7 @@ Build a ticket managing app, where the user can _add_, _filter_ (by status), _as
 
 ### Server / API
 
-The server application is available at http://localhost:4200/api when you run `yarn start`.
+The server application is available at http://localhost:4200/api when you run `pnpm start`.
 
 Note that there is an intentional artificial delay on the API - PLEASE DO NOT REMOVE IT! We've added it in as a way to check your frontend application's ability to handle race conditions/loading and pending states.
 

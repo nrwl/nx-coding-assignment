@@ -1,9 +1,21 @@
 import { defineConfig } from 'vite';
-
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
+  root: __dirname,
+  build: {
+    outDir: '../dist/client',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
   test: {
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../coverage/client',
+      provider: 'v8',
+    },
     globals: true,
     cache: {
       dir: '../node_modules/.vitest',
